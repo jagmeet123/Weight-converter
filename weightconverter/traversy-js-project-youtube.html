@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+
+body{
+   margin-top:50px;
+   color:white;
+   background: linear-gradient(to bottom,rgba(249,107,142,1),rgba(218,103,230,1),rgba(130,125,253,1));
+   
+}
+
+.card-body{
+padding:1.3%;
+
+}
+.card{
+    border-radius:0.5em;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<div class="container">
+ <div class="row">
+
+ <div class="col-md-6 offset-md-3">
+        <h1 class="display-4 text-center mb-4">Weight Converter</h1>
+    
+        <form class="mb-4">
+            <div class="form-group">
+                <input id="lbsInput" type="number" class="form-control form-control-lg" placeholder="Enter your weight in Pounds.........">
+            </div>
+    
+        </form>
+
+
+  <div id="output">
+        <div class="card bg-primary mb-2">
+            <div class="card-body">
+                <h4>Grams:</h4>
+                <div id="gramOutput"></div>
+            </div>
+        </div>
+
+        
+
+        <div class="card bg-success mb-2">
+                <div class="card-body">
+                    <h4>Kilograms:</h4>
+                    <div id="kiloOutput"></div>
+
+                </div>
+        </div>
+
+        
+
+        <div class="card bg-danger mb-2">
+                <div class="card-body">
+                    <h4>Ounces:</h4>
+                    <div id="ouncesOutput"></div>
+                </div>
+        </div>
+
+
+    </div>
+
+
+ </div>
+</div>
+
+
+</div>
+
+</body>
+
+
+
+
+
+
+
+
+<script>
+          document.getElementById('output').style.display='none';
+
+        
+  document.getElementById('lbsInput').addEventListener('input',function(){
+
+     
+
+      var weight= document.getElementById('lbsInput').value;
+
+               document.getElementById('kiloOutput').style.display='block';
+        document.getElementById('gramOutput').style.display='block';
+        document.getElementById('ouncesOutput').style.display='block';
+
+      document.getElementById('gramOutput').innerHTML=(weight/0.0022046).toFixed(4);
+      document.getElementById('kiloOutput').innerHTML=(weight/2.2046).toFixed(4);
+      document.getElementById('ouncesOutput').innerHTML=(weight*16).toFixed(4);
+  
+             
+      document.getElementById('output').style.display='block';
+      
+
+if((document.getElementById('lbsInput').value==='')|| (document.getElementById('lbsInput').value===0)) {
+    document.getElementById('gramOutput').style.display='none';
+        document.getElementById('kiloOutput').style.display='none';
+        document.getElementById('ouncesOutput').style.display='none';
+        document.getElementById('output').style.display='none';
+
+    }
+        
+
+  });
+  
+
+ 
+
+</script>
+</html>
